@@ -1,0 +1,42 @@
+#include<stdio.h>
+void main() 
+{
+int i, j, middle_index, no; 
+printf("enter no of rows\n");
+scanf("%d",&no);
+if(no%2==0)
+{
+  no++;
+}
+middle_index = (no/2)+1;
+int counter = middle_index;
+for(i=1; i<=no; i++){
+  for(j=1; j<=no; j++){
+    if(j == middle_index || i == middle_index  || (j>=counter && j<=2*middle_index-counter && i!=1 && i!=no)){
+      printf("*");
+    }
+    else{
+      printf(" ");
+    }
+  }
+  if(i<= middle_index){
+    counter = counter-1;
+  }
+  else{
+    counter = counter+1;
+  }
+  if(counter == 0){
+    counter = 2;
+  }
+  printf("\n");
+}
+
+}
+
+
+
+
+
+
+
+
